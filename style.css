@@ -37,8 +37,10 @@ main {
   flex-direction: column;
   gap: 0rem;
 }
-main section.view1 {
+main section {
   width: 100%;
+}
+main section.view1 {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -59,10 +61,12 @@ main section.view1 .bottom {
   padding: 1.5rem;
   border-radius: 0.7rem;
 }
-main section.view1 .bottom p {
+main section.view1 .bottom > p {
   color: var(--text);
   text-transform: uppercase;
   font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 main section.view1 .bottom .text-group {
   display: flex;
@@ -71,10 +75,10 @@ main section.view1 .bottom .text-group {
   color: var(--text);
 }
 main section.view1 .bottom .text-group h1 {
-  font-weight: 350;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
 }
 main section.view1 .bottom .text-group p {
   text-transform: unset;
@@ -97,32 +101,84 @@ main section.view2 {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 100%;
   padding: 1rem;
 }
-main section.view2 .top, main section.view2 .bottom {
+main section.view2 .top,
+main section.view2 .bottom {
   width: 100%;
   display: flex;
   flex-direction: row;
   gap: 0rem;
   justify-content: space-around;
 }
-main section.view2 .top .element, main section.view2 .bottom .element {
+main section.view2 .top .element,
+main section.view2 .bottom .element {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
   align-items: center;
 }
-main section.view2 .top .element small, main section.view2 .bottom .element small {
+main section.view2 .top .element small,
+main section.view2 .bottom .element small {
   text-transform: uppercase;
   color: var(--text-muted);
   opacity: 0.8;
 }
-main section.view2 .top .element h2, main section.view2 .bottom .element h2 {
+main section.view2 .top .element h2,
+main section.view2 .bottom .element h2 {
   text-transform: uppercase;
   color: var(--text);
   font-size: 2rem;
-  font-weight: 300;
+  font-weight: 500;
+}
+main section.view3 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+main section.view3 .top {
+  width: 100%;
+}
+main section.view3 .top img {
+  width: 100%;
+  border-radius: 0.7rem;
+  aspect-ratio: 1/1;
+}
+main section.view3 .bottom {
+  background-color: var(--bg-light);
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  padding: 1.5rem;
+  border-radius: 0.7rem;
+}
+main section.view3 .bottom > p {
+  color: var(--text);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+main section.view3 .bottom .text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--text);
+}
+main section.view3 .bottom .text-group h1 {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 2.3rem;
+}
+main section.view3 .bottom .text-group .para-group p {
+  display: inline;
+  text-transform: unset;
+  color: var(--text-muted);
+  line-height: 2;
+  font-size: 1.2rem;
+  opacity: 0.8;
 }
 
 @media (min-width: 900px) {
@@ -145,6 +201,7 @@ main section.view2 .top .element h2, main section.view2 .bottom .element h2 {
   }
   main section.view1 .bottom .text-group h1 {
     font-size: 2rem;
+    width: 70%;
   }
   main section.view1 .bottom .text-group p {
     font-size: 1rem;
@@ -154,10 +211,37 @@ main section.view2 .top .element h2, main section.view2 .bottom .element h2 {
   main section.view2 {
     flex-direction: row;
   }
-  main section.view2 .top .element h2, main section.view2 .bottom .element h2 {
+  main section.view2 .top .element h2,
+  main section.view2 .bottom .element h2 {
     font-size: 2.5rem;
   }
-  main section.view2 .top .element small, main section.view2 .bottom .element small {
+  main section.view2 .top .element small,
+  main section.view2 .bottom .element small {
     font-size: 1.2rem;
+  }
+  main section.view3 {
+    flex-direction: row-reverse;
+  }
+  main section.view3 .top,
+  main section.view3 .bottom {
+    width: 50%;
+  }
+  main section.view3 .bottom {
+    justify-content: space-between;
+    padding: 4rem;
+  }
+  main section.view3 .bottom .text-group h1 {
+    font-size: 2rem;
+    width: 70%;
+  }
+  main section.view3 .bottom .text-group .para-group {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  main section.view3 .bottom .text-group .para-group p {
+    font-size: 1rem;
+    width: 85%;
+    line-height: 1.5;
   }
 }/*# sourceMappingURL=style.css.map */
