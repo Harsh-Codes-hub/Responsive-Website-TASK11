@@ -36,11 +36,13 @@ body {
 
 button {
   all: unset;
+  cursor: pointer;
 }
 
 main {
   width: 100%;
   @include flex-display(0rem);
+
   section {
     width: 100%;
   }
@@ -321,6 +323,71 @@ main {
       }
     }
   }
+
+  section.view6 {
+    @include flex-display(1rem);
+    padding: 1rem;
+
+    .top,
+    .bottom {
+      width: 100%;
+    }
+
+    .top {
+      width: 100%;
+
+      img {
+        width: 100%;
+        border-radius: 0.7rem;
+      }
+    }
+
+    .bottom {
+      border-radius: 0.7rem;
+      background-color: var(--bg-light);
+      padding: 1.5rem;
+      @include flex-display(2rem);
+      .text-group {
+        @include flex-display(0.5rem);
+        p {
+          color: var(--text-muted);
+          text-transform: uppercase;
+          font-size: 0.9rem;
+          font-weight: 700;
+          letter-spacing: 2px;
+        }
+
+        h1 {
+          color: var(--text);
+          text-transform: uppercase;
+          font-weight: 400;
+          font-size: 2rem;
+          width: 85%;
+        }
+      }
+
+      button {
+        color: var(--text);
+        width: fit-content;
+        padding: 0.5rem 1rem;
+        border-radius: 0.7rem;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        font-weight: 400;
+        @include flex-display(0.5rem, row);
+        align-items: center;
+        justify-content: space-around;
+        font-size: 1.2rem;
+
+        i {
+          font-size: 1.5rem;
+          background-color: hsla(0, 0%, 100%, 0.137);
+          border-radius: 50%;
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 900px) {
@@ -436,9 +503,7 @@ main {
         flex-direction: row;
 
         .card {
-
           .card-top {
-
             i {
               font-size: 1.5rem;
             }
@@ -450,6 +515,26 @@ main {
                 font-size: 1.2rem;
               }
             }
+          }
+        }
+      }
+    }
+
+    section.view6 {
+      flex-direction: row;
+      .top,
+      .bottom {
+        width: 50%;
+      }
+
+      .bottom {
+        padding: 4rem;
+        justify-content: space-between;
+
+        .text-group {
+          h1 {
+            font-size: 1.5rem;
+            width: 75%;
           }
         }
       }
