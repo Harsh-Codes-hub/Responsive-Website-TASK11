@@ -4,6 +4,7 @@
   --text: oklch(0.96 0.01 93);
   --text-muted: oklch(0.76 0.01 93);
   --highlight: oklch(0.5 0.01 93);
+  --bg-primary: oklch(79.398% 0.11283 98.845);
   font-size: clamp(14px, 1vw, 18px);
 }
 
@@ -385,6 +386,97 @@ main {
           border-radius: 50%;
           padding: 0.5rem;
         }
+      }
+    }
+  }
+
+  section.view7 {
+    @include flex-display(1rem);
+    padding: 1rem;
+
+    #item1,
+    #item2,
+    #item3,
+    #item4 {
+      border-radius: 0.7rem;
+      padding: 1.5rem;
+      width: 100%;
+    }
+
+    #item1 {
+      background-color: var(--bg-primary);
+      @include flex-display(0.5rem);
+
+      p {
+        color: var(--bg);
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        font-weight: 400;
+        letter-spacing: 2px;
+      }
+
+      .bottom {
+        @include flex-display(1rem);
+        text-transform: uppercase;
+        align-items: center;
+
+        h1 {
+          color: var(--bg);
+          text-transform: uppercase;
+          font-weight: 400;
+          font-size: 3rem;
+        }
+
+        button {
+          background-color: var(--bg);
+          color: var(--text);
+          width: max-content;
+          padding: 1rem 5rem;
+          border-radius: 0.7rem;
+          font-weight: 500;
+          @include flex-display(0.5rem, row);
+          align-items: center;
+          justify-content: space-between;
+          i {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+
+    #item2 {
+      background-color: var(--bg-light);
+      @include flex-display(5rem);
+
+      p {
+        color: var(--text-muted);
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        font-weight: 400;
+        letter-spacing: 2px;
+      }
+
+      .button-group {
+        @include flex-display(.5rem, row);
+
+        i {
+          color: var(--text);
+          font-size: 1.2rem;
+          background-color: hsla(0, 0%, 100%, 0.137);
+          border-radius: 50%;
+          padding: 0.5rem;
+          border: 1px solid hsla(0, 0%, 100%, 0.062);
+        }
+      }
+    }
+
+    #item3 {
+      @include flex-display(2rem, row);
+      background-color: var(--bg-light);
+      flex-wrap: wrap;
+
+      .box {
+        width: 100%;
       }
     }
   }
