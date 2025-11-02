@@ -94,13 +94,21 @@ main {
         }
 
         button {
-          width: fit-content;
-          background-color: var(--highlight);
-          padding: 0.5rem 1rem;
-          border-radius: 0.7rem;
           text-transform: uppercase;
-          font-size: 0.8rem;
-          font-weight: 500;
+          color: var(--text);
+          font-size: 400;
+          @include flex-display(.5rem, row);
+          width: fit-content;
+          align-items: center;
+
+          i {
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            background-color: hsla(0, 0%, 100%, 0.075);
+            border-radius: 50%;
+            padding: .5rem;
+            border: 1px solid hsla(0, 0%, 100%, 0.062);
+          }
         }
       }
     }
@@ -429,11 +437,12 @@ main {
 
         button {
           background-color: var(--bg);
+          font-size: .8rem;
           color: var(--text);
           width: max-content;
-          padding: 1rem 5rem;
-          border-radius: 0.7rem;
-          font-weight: 500;
+          padding: 1rem 3rem;
+          border-radius: 0.5rem;
+          font-weight: 400;
           @include flex-display(0.5rem, row);
           align-items: center;
           justify-content: space-between;
@@ -457,12 +466,12 @@ main {
       }
 
       .button-group {
-        @include flex-display(.5rem, row);
+        @include flex-display(0.5rem, row);
 
         i {
           color: var(--text);
           font-size: 1.2rem;
-          background-color: hsla(0, 0%, 100%, 0.137);
+          background-color: hsla(0, 0%, 100%, 0.075);
           border-radius: 50%;
           padding: 0.5rem;
           border: 1px solid hsla(0, 0%, 100%, 0.062);
@@ -471,12 +480,76 @@ main {
     }
 
     #item3 {
-      @include flex-display(2rem, row);
+      @include flex-display(2rem, column);
       background-color: var(--bg-light);
-      flex-wrap: wrap;
 
       .box {
-        width: 100%;
+        @include flex-display(1.5rem);
+
+        h2 {
+          color: var(--text);
+          text-transform: uppercase;
+          font-size: 1.2rem;
+          font-weight: 400;
+        }
+
+        .link-group {
+          @include flex-display(1.5rem);
+          text-transform: uppercase;
+
+          p {
+            color: var(--text-muted);
+            font-size: .9rem;
+            font-weight: 400;
+            opacity: 0.8;
+            cursor: pointer;
+          }
+
+          button {
+            background-color: var(--bg-primary);
+            width: fit-content;
+            padding: 1rem 1.5rem;
+            border-radius: 0.7rem;
+          }
+        }
+      }
+    }
+
+    #item4 {
+      background-color: var(--bg-light);
+      @include flex-display(1.5rem, row);
+      flex-wrap: wrap;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+
+      p {
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        font-weight: 400;
+        line-height: 1.5;
+
+        a {
+          color: var(--text);
+        }
+      }
+
+      button {
+        color: var(--text);
+        font-weight: 400;
+        @include flex-display(1rem, row);
+        width: fit-content;
+        align-items: center;
+
+        i {
+          color: var(--text-muted);
+          font-size: 1rem;
+          background-color: hsla(0, 0%, 100%, 0.075);
+          border-radius: 50%;
+          padding: 0.5rem;
+          border: 1px solid hsla(0, 0%, 100%, 0.062);
+        }
       }
     }
   }
@@ -629,6 +702,56 @@ main {
             width: 75%;
           }
         }
+      }
+    }
+
+    section.view7 {
+      display: grid;
+      grid-template-columns: 20% 1fr;
+      grid-template-rows: 40% 50%fr 10%;
+
+      #item1,
+      #item2,
+      #item3,
+      #item4 {
+        padding: 2.2rem 2rem;
+      }
+
+      #item1 {
+        grid-area: 1 / 1 / 2 / 3;
+
+        .bottom {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-end;
+          flex-wrap: wrap;
+          h1 {
+            font-size: 4rem;
+            width: 60%;
+          }
+
+          button {
+            padding: 1rem 1.5rem;
+          }
+        }
+      }
+
+      #item2 {
+        grid-area: 2/ 1/ 4/ 2;
+        justify-content: space-between;
+      }
+
+      #item3 {
+        grid-area: 2/ 2/ 3/ 3;
+        flex-direction: row;
+        .box {
+          width: 33.33%;
+        }
+      }
+
+      #item4 {
+        grid-area: 3 / 2 / 4 / 3;
+        justify-content: space-between;
       }
     }
   }

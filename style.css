@@ -90,14 +90,23 @@ main section.view1 .bottom .text-group p {
   opacity: 0.8;
 }
 main section.view1 .bottom .text-group button {
+  text-transform: uppercase;
+  color: var(--text);
+  font-size: 400;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
   width: -moz-fit-content;
   width: fit-content;
-  background-color: var(--highlight);
-  padding: 0.5rem 1rem;
-  border-radius: 0.7rem;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  font-weight: 500;
+  align-items: center;
+}
+main section.view1 .bottom .text-group button i {
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  background-color: hsla(0, 0%, 100%, 0.075);
+  border-radius: 50%;
+  padding: 0.5rem;
+  border: 1px solid hsla(0, 0%, 100%, 0.062);
 }
 main section.view2 {
   display: flex;
@@ -428,12 +437,13 @@ main section.view7 #item1 .bottom h1 {
 }
 main section.view7 #item1 .bottom button {
   background-color: var(--bg);
+  font-size: 0.8rem;
   color: var(--text);
   width: -moz-max-content;
   width: max-content;
-  padding: 1rem 5rem;
-  border-radius: 0.7rem;
-  font-weight: 500;
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  font-weight: 400;
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
@@ -464,20 +474,85 @@ main section.view7 #item2 .button-group {
 main section.view7 #item2 .button-group i {
   color: var(--text);
   font-size: 1.2rem;
-  background-color: hsla(0, 0%, 100%, 0.137);
+  background-color: hsla(0, 0%, 100%, 0.075);
   border-radius: 50%;
   padding: 0.5rem;
   border: 1px solid hsla(0, 0%, 100%, 0.062);
 }
 main section.view7 #item3 {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 2rem;
   background-color: var(--bg-light);
-  flex-wrap: wrap;
 }
 main section.view7 #item3 .box {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+main section.view7 #item3 .box h2 {
+  color: var(--text);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+main section.view7 #item3 .box .link-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-transform: uppercase;
+}
+main section.view7 #item3 .box .link-group p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.8;
+  cursor: pointer;
+}
+main section.view7 #item3 .box .link-group button {
+  background-color: var(--bg-primary);
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1rem 1.5rem;
+  border-radius: 0.7rem;
+}
+main section.view7 #item4 {
+  background-color: var(--bg-light);
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+main section.view7 #item4 p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  line-height: 1.5;
+}
+main section.view7 #item4 p a {
+  color: var(--text);
+}
+main section.view7 #item4 button {
+  color: var(--text);
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+}
+main section.view7 #item4 button i {
+  color: var(--text-muted);
+  font-size: 1rem;
+  background-color: hsla(0, 0%, 100%, 0.075);
+  border-radius: 50%;
+  padding: 0.5rem;
+  border: 1px solid hsla(0, 0%, 100%, 0.062);
 }
 
 @media (min-width: 900px) {
@@ -594,5 +669,47 @@ main section.view7 #item3 .box {
   main section.view6 .bottom .text-group h1 {
     font-size: 1.5rem;
     width: 75%;
+  }
+  main section.view7 {
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    grid-template-rows: 40% 50% fr 10%;
+  }
+  main section.view7 #item1,
+  main section.view7 #item2,
+  main section.view7 #item3,
+  main section.view7 #item4 {
+    padding: 2.2rem 2rem;
+  }
+  main section.view7 #item1 {
+    grid-area: 1/1/2/3;
+  }
+  main section.view7 #item1 .bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+  main section.view7 #item1 .bottom h1 {
+    font-size: 4rem;
+    width: 60%;
+  }
+  main section.view7 #item1 .bottom button {
+    padding: 1rem 1.5rem;
+  }
+  main section.view7 #item2 {
+    grid-area: 2/1/4/2;
+    justify-content: space-between;
+  }
+  main section.view7 #item3 {
+    grid-area: 2/2/3/3;
+    flex-direction: row;
+  }
+  main section.view7 #item3 .box {
+    width: 33.33%;
+  }
+  main section.view7 #item4 {
+    grid-area: 3/2/4/3;
+    justify-content: space-between;
   }
 }/*# sourceMappingURL=style.css.map */
